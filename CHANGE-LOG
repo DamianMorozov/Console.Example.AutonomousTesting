@@ -4,6 +4,9 @@ CHANGE LOG
 28.08.2018
 ==========
 [+] Initial commit.
-[+] Add ExampleNSubstitute with Substitute.For and Substitute.ForPartsOf.
-[+] Add Setup and Teardown methods.
+[+] Add ClassPerson.
+[+] ClassPersonTests: Add ExampleNSubstitute with Substitute.For and Substitute.ForPartsOf.
+[+] ClassPersonTests: Add Setup and Teardown methods.
+[+] Add ClassLogAnalyzer.
+[+] ClassLogAnalyzerTests: Add TestCase.
 ----------------------------------------------------------------------------------------------------

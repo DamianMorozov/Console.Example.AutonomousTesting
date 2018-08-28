@@ -5,11 +5,14 @@ using System;
 namespace ExampleNSubstitute
 {
     [TestFixture]
-    public class ClassPersonTest
+    public class ClassPersonTests
     {
         private ClassPerson _person1;
         private ClassPerson _person2;
 
+        /// <summary>
+        /// Setup Design pattern Singleton and private fields
+        /// </summary>
         [SetUp]
         public void Setup()
         {
@@ -21,12 +24,14 @@ namespace ExampleNSubstitute
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
         }
 
+        /// <summary>
+        /// Reset Design pattern Singleton and private fields to default state
+        /// </summary>
         [TearDown]
         public void Teardown()
         {
             _person1 = null;
             _person2 = null;
-            // Set up default state for Design pattern Singleton
         }
 
         [Test]

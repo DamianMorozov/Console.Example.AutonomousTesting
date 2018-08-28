@@ -51,8 +51,10 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassLogAnalyzer.cs" />
+    <Compile Include="ClassLogAnalyzerTests.cs" />
     <Compile Include="ClassPerson.cs" />
-    <Compile Include="ClassPersonTest.cs" />
+    <Compile Include="ClassPersonTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
