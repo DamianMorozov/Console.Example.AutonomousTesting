@@ -4,9 +4,12 @@ CHANGE LOG
 28.08.2018
 ==========
 [+] Initial commit.
-[+] Add ClassPerson.
-[+] ClassPersonTests: Add ExampleNSubstitute with Substitute.For and Substitute.ForPartsOf.
-[+] ClassPersonTests: Add Setup and Teardown methods.
-[+] Add ClassLogAnalyzer.
-[+] ClassLogAnalyzerTests: Add TestCase.
+[+] Add NSubstitute project:
+	- ClassPerson.
+	- ClassPersonTests: Add ExampleNSubstitute with Substitute.For and Substitute.ForPartsOf.
+	- ClassPersonTests: Add Setup and Teardown methods.
+[+] Add CatchException project:
+	- ClassLogAnalyzer.
+	- ClassLogAnalyzerTests: Add TestCase for IsValidFileName_ValidExtensions.
+	- ClassLogAnalyzerTests: Add Assert.Catch<Exception> for IsValidFileName_CatchException.
 ----------------------------------------------------------------------------------------------------

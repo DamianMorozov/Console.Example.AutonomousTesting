@@ -1,7 +1,8 @@
 ﻿using NSubstitute;
 using NUnit.Framework;
+using System;
 
-namespace ExampleNSubstitute
+namespace CatchException
 {
     [TestFixture]
     public class ClassLogAnalyzerTests
@@ -15,8 +16,8 @@ namespace ExampleNSubstitute
         public void Setup()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            _log = Substitute.For<ClassLogAnalyzer>();
-            TestContext.WriteLine(@"var " + nameof(_log) + @" = Substitute.For<ClassLogAnalyzer>();");
+            _log = Substitute.ForPartsOf<ClassLogAnalyzer>();
+            TestContext.WriteLine(@"var " + nameof(_log) + @" = Substitute.ForPartsOf<ClassLogAnalyzer>();");
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
         }
 
@@ -32,12 +33,22 @@ namespace ExampleNSubstitute
         [TestCase(@"somefile.slf", true)]
         [TestCase(@"SOMEFILE.SLF", true)]
         [TestCase(@"otherfile.foo", false)]
-        public void IsValidFileName_ValidExtensins_CheckAll(string fileName, bool expected)
+        public void IsValidFileName_ValidExtensions(string fileName, bool expected)
         {
             var result = _log.IsValidFileName(fileName);
             TestContext.WriteLine(@"var result = " + nameof(_log) + @".IsValidFileName(fileName);");
             TestContext.WriteLine(@"result = " + result);
             Assert.AreEqual(expected, result);
+        }
+
+        [TestCase(@"", false)]
+        [TestCase(null, false)]
+        public void IsValidFileName_CatchException(string fileName, bool expected)
+        {
+            var result = Assert.Catch<Exception>(() => _log.IsValidFileName(fileName));
+            TestContext.WriteLine(@"var result = Assert.Catch<Exception>(() => " + nameof(_log) + @".IsValidFileName(fileName));");
+            TestContext.WriteLine(@"result.Message = " + result.Message);
+            StringAssert.Contains(@"FileName must be", result.Message);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ExampleNSubstitute
+﻿namespace CatchException
 {
     internal class Program
     {

@@ -5,13 +5,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46EAF96F-C612-4C55-A277-6368E1346E9E}</ProjectGuid>
+    <ProjectGuid>{5DA2290D-6D8F-469E-932B-62B212B7AFC2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ExampleNSubstitute</RootNamespace>
-    <AssemblyName>ExampleNSubstitute</AssemblyName>
+    <RootNamespace>CatchException</RootNamespace>
+    <AssemblyName>CatchException</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -45,16 +46,15 @@
       <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassLogAnalyzer.cs" />
     <Compile Include="ClassLogAnalyzerTests.cs" />
-    <Compile Include="ClassPerson.cs" />
-    <Compile Include="ClassPersonTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
