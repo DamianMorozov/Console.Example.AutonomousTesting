@@ -1,7 +1,5 @@
 ====================================================================================================
-Example of autonomous testing using NUnit and NSubstitute
-.NET Framework 4.7.1
-C# 7.3
+Example of NUnit with NSubstitute
 ====================================================================================================
 For use code install nuget packages:
 https://www.nuget.org/packages/NUnit
