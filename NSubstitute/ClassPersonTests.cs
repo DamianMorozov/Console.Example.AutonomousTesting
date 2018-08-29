@@ -1,5 +1,4 @@
-﻿using NSubstitute;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 
 namespace NSubstitute
@@ -25,6 +24,16 @@ namespace NSubstitute
         }
 
         /// <summary>
+        /// Create new object
+        /// </summary>
+        /// <returns></returns>
+        public ClassPerson MakePerson()
+        {
+            var person = new ClassPerson(@"Name", 30);
+            return person;
+        }
+
+        /// <summary>
         /// Reset Design pattern Singleton and private fields to default state
         /// </summary>
         [TearDown]
@@ -35,7 +44,7 @@ namespace NSubstitute
         }
 
         [Test]
-        public void MakeTest()
+        public void Substitute_For()
         {
             TestContext.WriteLine(@"The properties have values from constructor:");
             TestContext.WriteLine(@"- " + nameof(_person1) + @".Guid = " + Convert.ToString(_person1.Guid));
@@ -69,5 +78,44 @@ namespace NSubstitute
             TestContext.WriteLine(@"- " + nameof(_person2) + @".GetName() = " + _person2.GetName());
             TestContext.WriteLine(@"- " + nameof(_person2) + @".GetAge() = " + _person2.GetAge());
         }
+
+        [Test]
+        public void ClassPersonIsNull_CompareAgeWithZero_IsFalse()
+        {
+            ClassPerson person = null;
+            TestContext.WriteLine(@"ClassPerson person = null;");
+            TestContext.WriteLine(@"ClassPerson person.Age: " + person?.Age);
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+
+            var result = false;
+            // that case have compilator's error
+            //if (person?.Age ?? 0 > 0)
+            if (person?.Age > 0)
+                result = true;
+            TestContext.WriteLine(@"person?.Age > 0  -- " + result);
+            Assert.IsFalse(result);
+
+            result = false;
+            if (person?.Age > -1)
+                result = true;
+            TestContext.WriteLine(@"person?.Age > -1  -- " + result);
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void ClassPersonIsMake_CompareAgeWithZero_IsTrue()
+        {
+            ClassPerson person = MakePerson();
+            TestContext.WriteLine(@"ClassPerson person = MakePerson();");
+            TestContext.WriteLine(@"ClassPerson person.Age: " + person?.Age);
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+
+            var result = false;
+            if (person?.Age > 0)
+                result = true;
+            TestContext.WriteLine(@"person?.Age > 0  -- " + result);
+            Assert.IsTrue(result);
+        }
+
     }
 }

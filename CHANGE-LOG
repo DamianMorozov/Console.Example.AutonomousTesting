@@ -1,14 +1,20 @@
 ====================================================================================================
 CHANGE LOG
 ====================================================================================================
+29.08.2018
+==========
+[+] NSubstitute:
+	- ClassPersonTests: Add ClassPersonIsNull_CompareAgeWithZero_IsFalse.
+	- ClassPersonTests: Add ClassPersonIsMake_CompareAgeWithZero_IsTrue.
+----------------------------------------------------------------------------------------------------
 28.08.2018
 ==========
 [+] Initial commit.
-[+] Add NSubstitute project:
+[+] NSubstitute:
 	- ClassPerson.
 	- ClassPersonTests: Add ExampleNSubstitute with Substitute.For and Substitute.ForPartsOf.
 	- ClassPersonTests: Add Setup and Teardown methods.
-[+] Add CatchException project:
+[+] CatchException:
 	- ClassLogAnalyzer.
 	- ClassLogAnalyzerTests: Add TestCase for IsValidFileName_ValidExtensions.
 	- ClassLogAnalyzerTests: Add Assert.Catch<Exception> for IsValidFileName_CatchException.

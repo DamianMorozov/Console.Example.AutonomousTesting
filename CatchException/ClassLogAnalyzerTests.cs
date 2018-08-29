@@ -33,7 +33,7 @@ namespace CatchException
         [TestCase(@"somefile.slf", true)]
         [TestCase(@"SOMEFILE.SLF", true)]
         [TestCase(@"otherfile.foo", false)]
-        public void IsValidFileName_ValidExtensions(string fileName, bool expected)
+        public void IsValidFileName_ValidExtensions_Check(string fileName, bool expected)
         {
             var result = _log.IsValidFileName(fileName);
             TestContext.WriteLine(@"var result = " + nameof(_log) + @".IsValidFileName(fileName);");
@@ -41,9 +41,9 @@ namespace CatchException
             Assert.AreEqual(expected, result);
         }
 
-        [TestCase(@"", false)]
-        [TestCase(null, false)]
-        public void IsValidFileName_CatchException(string fileName, bool expected)
+        [TestCase(@"")]
+        [TestCase(null)]
+        public void IsValidFileName_CatchException_ThrowException(string fileName)
         {
             var result = Assert.Catch<Exception>(() => _log.IsValidFileName(fileName));
             TestContext.WriteLine(@"var result = Assert.Catch<Exception>(() => " + nameof(_log) + @".IsValidFileName(fileName));");
