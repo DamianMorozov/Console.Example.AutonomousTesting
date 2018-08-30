@@ -88,8 +88,6 @@ namespace NSubstitute
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
 
             var result = false;
-            // that case have compilator's error
-            //if (person?.Age ?? 0 > 0)
             if (person?.Age > 0)
                 result = true;
             TestContext.WriteLine(@"person?.Age > 0  -- " + result);
@@ -100,6 +98,12 @@ namespace NSubstitute
                 result = true;
             TestContext.WriteLine(@"person?.Age > -1  -- " + result);
             Assert.IsFalse(result);
+
+            result = false;
+            if (person?.Age == null)
+                result = true;
+            TestContext.WriteLine(@"person?.Age == null  -- " + result);
+            Assert.IsTrue(result);
         }
 
         [Test]

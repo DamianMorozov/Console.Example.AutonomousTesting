@@ -43,12 +43,22 @@ namespace CatchException
 
         [TestCase(@"")]
         [TestCase(null)]
-        public void IsValidFileName_CatchException_ThrowException(string fileName)
+        public void IsValidFileName_CatchException_ThrowsException(string fileName)
         {
             var result = Assert.Catch<Exception>(() => _log.IsValidFileName(fileName));
             TestContext.WriteLine(@"var result = Assert.Catch<Exception>(() => " + nameof(_log) + @".IsValidFileName(fileName));");
             TestContext.WriteLine(@"result.Message = " + result.Message);
             StringAssert.Contains(@"FileName must be", result.Message);
+        }
+
+        [TestCase(@"")]
+        [TestCase(null)]
+        public void IsValidFileName_CatchException_ThrowsFluent(string fileName)
+        {
+            var result = Assert.Catch<ArgumentException>(() => _log.IsValidFileName(fileName));
+            TestContext.WriteLine(@"var result = Assert.Catch<ArgumentException>(() => _log.IsValidFileName(fileName));");
+            TestContext.WriteLine(@"result.Message = " + result.Message);
+            Assert.That(result.Message, Does.Contain(@"FileName must be"));
         }
     }
 }
