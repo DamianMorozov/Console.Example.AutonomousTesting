@@ -1,4 +1,4 @@
-﻿namespace CatchException
+﻿namespace ExampleCatchExcept
 {
     internal class Program
     {

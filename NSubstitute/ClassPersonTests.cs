@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
+﻿using NSubstitute;
+using NUnit.Framework;
 using System;
 
-namespace NSubstitute
+namespace ExampleNSubstitute
 {
     [TestFixture]
     public class ClassPersonTests
@@ -16,21 +17,12 @@ namespace NSubstitute
         public void Setup()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine(@"Setup:");
             _person1 = Substitute.For<ClassPerson>(@"Name 1", 11);
-            TestContext.WriteLine(@"var " + nameof(_person1) + @" = Substitute.For<ClassPerson>(""Name 1"", 11);");
+            TestContext.WriteLine($@"{nameof(_person1)} = Substitute.For<ClassPerson>(@""Name 1"", 11);");
             _person2 = Substitute.ForPartsOf<ClassPerson>(@"Name 3", 33);
-            TestContext.WriteLine(@"var " + nameof(_person2) + @" = Substitute.ForPartsOf<ClassPerson>(""Name 3"", 33);");
+            TestContext.WriteLine($@"{nameof(_person2)} = Substitute.ForPartsOf<ClassPerson>(@""Name 3"", 33);");
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-        }
-
-        /// <summary>
-        /// Create new object
-        /// </summary>
-        /// <returns></returns>
-        public ClassPerson MakePerson()
-        {
-            var person = new ClassPerson(@"Name", 30);
-            return person;
         }
 
         /// <summary>
@@ -47,36 +39,49 @@ namespace NSubstitute
         public void Substitute_For()
         {
             TestContext.WriteLine(@"The properties have values from constructor:");
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".Guid = " + Convert.ToString(_person1.Guid));
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".Name = " + _person1.Name);
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".Age = " + _person1.Age);
+            TestContext.WriteLine($@"- {nameof(_person1)}.Guid = " + Convert.ToString(_person1.Guid));
+            TestContext.WriteLine($@"- {nameof(_person1)}.Name = " + _person1.Name);
+            TestContext.WriteLine($@"- {nameof(_person1)}.Age = " + _person1.Age);
             TestContext.WriteLine(@"The methods have default values:");
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetGuid() = " + _person1.GetGuid());
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetName() = " + _person1.GetName());
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetAge() = " + _person1.GetAge());
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetGuid() = " + _person1.GetGuid());
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetName() = " + _person1.GetName());
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetAge() = " + _person1.GetAge());
 
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
             TestContext.WriteLine(@"Set returns values for methods:");
             _person1.GetGuid().Returns(new Guid());
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetId().Returns(new Guid());");
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetId().Returns(new Guid());");
             _person1.GetName().Returns(@"Name 2");
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetName().Returns(""Name 2"");");
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetName().Returns(""Name 2"");");
             _person1.GetAge().Returns(22);
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetAge().Returns(22);");
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetAge().Returns(22);");
             TestContext.WriteLine(@"Get new values from methods:");
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".person.GetId() = " + Convert.ToString(_person1.GetGuid()));
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetName() = " + _person1.GetName());
-            TestContext.WriteLine(@"- " + nameof(_person1) + @".GetAge() = " + _person1.GetAge());
+            TestContext.WriteLine($@"- {nameof(_person1)}.person.GetId() = " + Convert.ToString(_person1.GetGuid()));
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetName() = " + _person1.GetName());
+            TestContext.WriteLine($@"- {nameof(_person1)}.GetAge() = " + _person1.GetAge());
 
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
             TestContext.WriteLine(@"The properties have values from constructor:");
-            TestContext.WriteLine(@"- " + nameof(_person2) + @".Id = " + Convert.ToString(_person2.Guid));
-            TestContext.WriteLine(@"- " + nameof(_person2) + @".Name = " + _person2.Name);
-            TestContext.WriteLine(@"- parti" + nameof(_person2) + @"alPerson.Age = " + _person2.Age);
+            TestContext.WriteLine($@"- {nameof(_person2)}.Id = " + Convert.ToString(_person2.Guid));
+            TestContext.WriteLine($@"- {nameof(_person2)}.Name = " + _person2.Name);
+            TestContext.WriteLine($@"- {nameof(_person2)}.Age = " + _person2.Age);
             TestContext.WriteLine(@"The methods have values from constructor:");
-            TestContext.WriteLine(@"- " + nameof(_person2) + @".GetId() = " + Convert.ToString(_person2.GetGuid()));
-            TestContext.WriteLine(@"- " + nameof(_person2) + @".GetName() = " + _person2.GetName());
-            TestContext.WriteLine(@"- " + nameof(_person2) + @".GetAge() = " + _person2.GetAge());
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetId() = " + Convert.ToString(_person2.GetGuid()));
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetName() = " + _person2.GetName());
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetAge() = " + _person2.GetAge());
+
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine(@"Set returns values for methods:");
+            _person2.GetGuid().Returns(new Guid());
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetId().Returns(new Guid());");
+            _person2.GetName().Returns(@"Name 2");
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetName().Returns(""Name 2"");");
+            _person2.GetAge().Returns(22);
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetAge().Returns(22);");
+            TestContext.WriteLine(@"Get new values from methods:");
+            TestContext.WriteLine($@"- {nameof(_person2)}.person.GetId() = " + Convert.ToString(_person1.GetGuid()));
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetName() = " + _person1.GetName());
+            TestContext.WriteLine($@"- {nameof(_person2)}.GetAge() = " + _person1.GetAge());
         }
 
         [Test]
@@ -106,6 +111,16 @@ namespace NSubstitute
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Create new object
+        /// </summary>
+        /// <returns></returns>
+        public ClassPerson MakePerson()
+        {
+            var person = new ClassPerson(@"Name", 30);
+            return person;
+        }
+
         [Test]
         public void ClassPersonIsMake_CompareAgeWithZero_IsTrue()
         {
@@ -120,6 +135,5 @@ namespace NSubstitute
             TestContext.WriteLine(@"person?.Age > 0  -- " + result);
             Assert.IsTrue(result);
         }
-
     }
 }

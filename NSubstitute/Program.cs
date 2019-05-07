@@ -1,4 +1,4 @@
-﻿namespace NSubstitute
+﻿namespace ExampleNSubstitute
 {
     internal class Program
     {

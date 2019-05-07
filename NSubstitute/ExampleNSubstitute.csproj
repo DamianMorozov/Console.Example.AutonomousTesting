@@ -5,14 +5,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DA2290D-6D8F-469E-932B-62B212B7AFC2}</ProjectGuid>
+    <ProjectGuid>{46EAF96F-C612-4C55-A277-6368E1346E9E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CatchException</RootNamespace>
-    <AssemblyName>CatchException</AssemblyName>
+    <RootNamespace>ExampleNSubstitute</RootNamespace>
+    <AssemblyName>ExampleNSubstitute</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -57,8 +56,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassLogAnalyzer.cs" />
-    <Compile Include="ClassLogAnalyzerTests.cs" />
+    <Compile Include="ClassPerson.cs" />
+    <Compile Include="ClassPersonTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
