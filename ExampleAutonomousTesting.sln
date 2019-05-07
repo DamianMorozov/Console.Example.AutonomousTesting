@@ -1,14 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E438B53-D16F-42B1-9D36-7FE0CA2C3929}"
-	ProjectSection(SolutionItems) = preProject
-		CHANGE-LOG = CHANGE-LOG
-		README = README
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchException", "CatchException\CatchException.csproj", "{5DA2290D-6D8F-469E-932B-62B212B7AFC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSubstitute", "NSubstitute\NSubstitute.csproj", "{46EAF96F-C612-4C55-A277-6368E1346E9E}"
