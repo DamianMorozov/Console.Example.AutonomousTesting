@@ -6,7 +6,7 @@ C# 7.3
 
 **For use code install nuget packages:**
 [NUnit](https://www.nuget.org/packages/NUnit)
-> Install-Package NUnit -Version 3.10.1
+> Install-Package NUnit
 
 [NSubstitute](https://www.nuget.org/packages/NSubstitute)
-> Install-Package NSubstitute -Version 3.1.0
+> Install-Package NSubstitute
