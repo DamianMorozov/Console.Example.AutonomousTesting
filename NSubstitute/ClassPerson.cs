@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExampleNSubstitute
+namespace ExampleNSubstituteTests
 {
     public class ClassPerson
     {

@@ -2,6 +2,15 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.0.50] - 2020-06-02
+### Updated
+- Nuget package Castle.Core 4.4.1.
+- Nuget package NSubstitute 4.2.1.
+- Nuget package NUnit 3.12.0.
+- Nuget package System.Runtime.CompilerServices.Unsafe 4.7.1.
+- Nuget package System.Threading.Tasks.Extensions 4.5.2.
+- .NET Framework 4.8.
+
 ## [0.0.44] - 2019-06-07
 ### Updated
 - CHANGELOG.md

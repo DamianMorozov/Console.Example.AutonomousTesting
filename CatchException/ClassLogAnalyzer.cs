@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExampleCatchExcept
+namespace ExampleCatchExceptTests
 {
     public class ClassLogAnalyzer
     {

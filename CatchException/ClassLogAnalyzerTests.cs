@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System;
 
-namespace ExampleCatchExcept
+namespace ExampleCatchExceptTests
 {
     [TestFixture]
     public class ClassLogAnalyzerTests

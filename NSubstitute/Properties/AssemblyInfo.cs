@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("ExampleNSubstitute")]
+[assembly: AssemblyTitle("ExampleNSubstituteTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ExampleNSubstitute")]
-[assembly: AssemblyCopyright("Copyright © 2018 - 2019")]
+[assembly: AssemblyProduct("ExampleNSubstituteTests")]
+[assembly: AssemblyCopyright("Copyright © 2018 - 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

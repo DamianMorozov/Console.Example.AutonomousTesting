@@ -1,4 +1,4 @@
-﻿namespace ExampleNSubstitute
+﻿namespace ExampleNSubstituteTests
 {
     internal class Program
     {

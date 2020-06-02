@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleCatchExcept", "CatchException\ExampleCatchExcept.csproj", "{5DA2290D-6D8F-469E-932B-62B212B7AFC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleCatchExceptTests", "CatchException\ExampleCatchExceptTests.csproj", "{5DA2290D-6D8F-469E-932B-62B212B7AFC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleNSubstitute", "NSubstitute\ExampleNSubstitute.csproj", "{46EAF96F-C612-4C55-A277-6368E1346E9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleNSubstituteTests", "NSubstitute\ExampleNSubstituteTests.csproj", "{46EAF96F-C612-4C55-A277-6368E1346E9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8939DAD7-BFD2-4F9D-B961-9F8986261B0D}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
